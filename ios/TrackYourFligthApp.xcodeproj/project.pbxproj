@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* TrackYourFligthAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TrackYourFligthAppTests.m */; };
+		077D8D037ED941C8BD9ADD94 /* Garnett-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CCDCCFB8C247427896F8155E /* Garnett-Regular.ttf */; };
 		0C80B921A6F3F58F76C31292 /* libPods-TrackYourFligthApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-TrackYourFligthApp.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		6B9B914419AE4C73A6C72261 /* Garnett-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D985A6BE64464FCD87AA8FC9 /* Garnett-Medium.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-TrackYourFligthApp-TrackYourFligthAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-TrackYourFligthApp-TrackYourFligthAppTests.a */; };
+		7E077CC564834DC7A3794274 /* Garnett-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B01977DEC1E408EB9BCD8F1 /* Garnett-Light.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		9E888C2B786542EB91C6B93C /* Garnett-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C1F672C964F542048A489031 /* Garnett-Bold.ttf */; };
-		7E077CC564834DC7A3794274 /* Garnett-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B01977DEC1E408EB9BCD8F1 /* Garnett-Light.ttf */; };
-		6B9B914419AE4C73A6C72261 /* Garnett-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D985A6BE64464FCD87AA8FC9 /* Garnett-Medium.ttf */; };
-		077D8D037ED941C8BD9ADD94 /* Garnett-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CCDCCFB8C247427896F8155E /* Garnett-Regular.ttf */; };
 		DFC054F9CB694C5880B99880 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 8C3EB95CEDB54C1A8B2AD8D5 /* .gitkeep */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +35,7 @@
 		00E356EE1AD99517003FC87E /* TrackYourFligthAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrackYourFligthAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* TrackYourFligthAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrackYourFligthAppTests.m; sourceTree = "<group>"; };
+		0B01977DEC1E408EB9BCD8F1 /* Garnett-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Garnett-Light.ttf"; path = "../assets/fonts/Garnett-Light.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* TrackYourFligthApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackYourFligthApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = TrackYourFligthApp/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = TrackYourFligthApp/AppDelegate.mm; sourceTree = "<group>"; };
@@ -48,12 +49,11 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-TrackYourFligthApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TrackYourFligthApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = TrackYourFligthApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-TrackYourFligthApp-TrackYourFligthAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackYourFligthApp-TrackYourFligthAppTests.release.xcconfig"; path = "Target Support Files/Pods-TrackYourFligthApp-TrackYourFligthAppTests/Pods-TrackYourFligthApp-TrackYourFligthAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		8C3EB95CEDB54C1A8B2AD8D5 /* .gitkeep */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = .gitkeep; path = ../assets/fonts/.gitkeep; sourceTree = "<group>"; };
+		C1F672C964F542048A489031 /* Garnett-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Garnett-Bold.ttf"; path = "../assets/fonts/Garnett-Bold.ttf"; sourceTree = "<group>"; };
+		CCDCCFB8C247427896F8155E /* Garnett-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Garnett-Regular.ttf"; path = "../assets/fonts/Garnett-Regular.ttf"; sourceTree = "<group>"; };
+		D985A6BE64464FCD87AA8FC9 /* Garnett-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Garnett-Medium.ttf"; path = "../assets/fonts/Garnett-Medium.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		C1F672C964F542048A489031 /* Garnett-Bold.ttf */ = {isa = PBXFileReference; name = "Garnett-Bold.ttf"; path = "../assets/fonts/Garnett-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		0B01977DEC1E408EB9BCD8F1 /* Garnett-Light.ttf */ = {isa = PBXFileReference; name = "Garnett-Light.ttf"; path = "../assets/fonts/Garnett-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		D985A6BE64464FCD87AA8FC9 /* Garnett-Medium.ttf */ = {isa = PBXFileReference; name = "Garnett-Medium.ttf"; path = "../assets/fonts/Garnett-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		CCDCCFB8C247427896F8155E /* Garnett-Regular.ttf */ = {isa = PBXFileReference; name = "Garnett-Regular.ttf"; path = "../assets/fonts/Garnett-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		8C3EB95CEDB54C1A8B2AD8D5 /* .gitkeep */ = {isa = PBXFileReference; name = ".gitkeep"; path = "../assets/fonts/.gitkeep"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +160,7 @@
 			sourceTree = "<group>";
 		};
 		DCE98ED998F24BF88213CDCA /* Resources */ = {
-			isa = "PBXGroup";
+			isa = PBXGroup;
 			children = (
 				C1F672C964F542048A489031 /* Garnett-Bold.ttf */,
 				0B01977DEC1E408EB9BCD8F1 /* Garnett-Light.ttf */,
@@ -169,8 +169,8 @@
 				8C3EB95CEDB54C1A8B2AD8D5 /* .gitkeep */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
 			path = "";
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
