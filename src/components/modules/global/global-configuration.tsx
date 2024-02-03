@@ -1,11 +1,11 @@
-import {ChildrenProps} from '@/models/interfaces/global/children';
+import HomeNavigation from '@/navigation/home/navigation';
 import {ColorLightStyle, ColorPrimaryStyle} from '@/styles/global/colors';
+import {NavigationContainer} from '@react-navigation/native';
 import React, {FC, useEffect, useState} from 'react';
-import {View, useColorScheme} from 'react-native';
+import {useColorScheme} from 'react-native';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
-const GlobalConfigurationModule: FC<ChildrenProps> = props => {
-  const {children} = props;
-
+const GlobalConfigurationModule: FC = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const [backgroundColor, setBackgroundColor] = useState<string>();
@@ -23,7 +23,13 @@ const GlobalConfigurationModule: FC<ChildrenProps> = props => {
     setBackgroundColor(isDarkMode ? ColorPrimaryStyle : ColorLightStyle);
   };
 
-  return <View style={{backgroundColor}}>{children}</View>;
+  return (
+    <SafeAreaProvider style={{backgroundColor}}>
+      <NavigationContainer>
+        <HomeNavigation />
+      </NavigationContainer>
+    </SafeAreaProvider>
+  );
 };
 
 export default GlobalConfigurationModule;
