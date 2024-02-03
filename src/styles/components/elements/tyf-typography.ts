@@ -50,25 +50,25 @@ export const TyfTypographyFontLightStyle: StyleProp<TextStyle> = {
 };
 
 export const TyfTypographyHeadingStyle: StyleProp<TextStyle> = {
-  fontSize: 40,
-  lineHeight: 44,
+  fontSize: 32,
+  lineHeight: 32,
   letterSpacing: 0.25,
 };
 
 export const TyfTypographySubheadingStyle: StyleProp<TextStyle> = {
-  fontSize: 32,
-  lineHeight: 36,
+  fontSize: 24,
+  lineHeight: 24,
   letterSpacing: 0.25,
 };
 
 export const TyfTypographyParagraphStyle: StyleProp<TextStyle> = {
-  fontSize: 20,
-  lineHeight: 24,
+  fontSize: 16,
+  lineHeight: 18,
   letterSpacing: 0.25,
 };
 
 export const TyfTypographySmallStyle: StyleProp<TextStyle> = {
   fontSize: 12,
-  lineHeight: 16,
+  lineHeight: 20,
   letterSpacing: 0.25,
 };

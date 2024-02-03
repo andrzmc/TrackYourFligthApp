@@ -11,7 +11,7 @@ import {
   TyfTypographyLightColorStyle,
 } from '@/styles/components/elements/tyf-typography';
 
-export const TyfTypographyColorWhiteTheme = {
+export const TyfTypographyColorLightTheme = {
   Primary: TyfTypographyPrimaryColorStyle,
   Secondary: TyfTypographySecondaryColorStyle,
   Success: TyfTypographySuccessColorStyle,

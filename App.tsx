@@ -80,7 +80,7 @@ function App(): React.JSX.Element {
           <Section title="Step One">
             Edit <Text style={styles.highlight}>App.tsx</Text> to change this
             <TyfTypography
-              text="screen and then come back to see your edits."
+              text=" screen and then come back to see your edits."
               color="Secondary"
               variant="Paragraph"
             />

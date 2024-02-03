@@ -1,10 +1,9 @@
 import {TyfTypographyProps} from '@/models/interfaces/components/elements/tyf-typography';
 import React, {FC, useEffect, useState} from 'react';
-import {StyleProp, TextStyle, Text} from 'react-native';
-import {useColorScheme} from 'react-native/Libraries/Utilities/Appearance';
+import {StyleProp, TextStyle, Text, useColorScheme} from 'react-native';
 import {
   TyfTypographyColorDarkTheme,
-  TyfTypographyColorWhiteTheme,
+  TyfTypographyColorLightTheme,
   TyfTypographyVariant,
 } from './tyf-typography.utils';
 
@@ -30,7 +29,7 @@ const TyfTypography: FC<TyfTypographyProps> = props => {
     setColorStyle(
       isDarkMode
         ? TyfTypographyColorDarkTheme[color || 'Primary']
-        : TyfTypographyColorWhiteTheme[color || 'Primary']
+        : TyfTypographyColorLightTheme[color || 'Primary']
     );
   };
 
