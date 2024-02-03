@@ -9,6 +9,10 @@ import {
   TyfTypographySmallStyle,
   TyfTypographySecondaryColorStyle,
   TyfTypographyLightColorStyle,
+  TyfTypographyFontBoldStyle,
+  TyfTypographyFontLightStyle,
+  TyfTypographyFontMediumStyle,
+  TyfTypographyFontRegularStyle,
 } from '@/styles/components/elements/tyf-typography';
 
 export const TyfTypographyColorLightTheme = {
@@ -34,4 +38,11 @@ export const TyfTypographyVariant = {
   Subheading: TyfTypographySubheadingStyle,
   Paragraph: TyfTypographyParagraphStyle,
   Small: TyfTypographySmallStyle,
+};
+
+export const TyfTypographyFontWeight = {
+  Bold: TyfTypographyFontBoldStyle,
+  Medium: TyfTypographyFontMediumStyle,
+  Regular: TyfTypographyFontRegularStyle,
+  Light: TyfTypographyFontLightStyle,
 };
