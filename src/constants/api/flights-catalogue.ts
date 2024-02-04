@@ -1,4 +1,4 @@
-export const API_SEARCH_BY_ORIGIN_DESTINATION = {
+export const API_FLIGHTS_CATALOGUE = {
   flightStatusCollection: [
     {
       status: 'ARRIVED',
