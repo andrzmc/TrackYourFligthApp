@@ -48,7 +48,7 @@ const TyfSelect: FC<TyfSelectProps> = props => {
         placeholder={selectPlaceholder}
         onValueChange={onChange}
         fixAndroidTouchableBug={true}
-        items={options}
+        items={options.map(item => ({...item, key: item.value}))}
         disabled={typeof disabled !== 'undefined' ? disabled : false}>
         <TyfSelectContent
           item={selectedOption}

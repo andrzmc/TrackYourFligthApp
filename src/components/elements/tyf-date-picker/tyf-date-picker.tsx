@@ -1,9 +1,11 @@
 import React, {FC, useState} from 'react';
 import TyfDatePickerInput from './tyf-date-picker-input';
 import DatePicker from 'react-native-date-picker';
+import {TyfDatePickerProps} from '@/models/interfaces/components/elements/tyf-date-picker';
+import TyfDatePickerMinimalist from './tyf-date-picker-minimalist';
 
-const TyfDatePicker: FC = () => {
-  const [value, setValue] = useState<Date>();
+const TyfDatePicker: FC<TyfDatePickerProps> = props => {
+  const {value, theme, placeholder, disabled, onChange} = props;
   const [open, setOpen] = useState<boolean>();
 
   const toogleDatePicker = () => {
@@ -12,17 +14,21 @@ const TyfDatePicker: FC = () => {
 
   const handdleDatePicker = (event: Date) => {
     setOpen(false);
-    setValue(event);
+    onChange && onChange(event);
   };
 
   return (
     <>
-      <TyfDatePickerInput
-        placeholder="Select Date"
-        value={value}
-        onPress={toogleDatePicker}
-        disabled={true}
-      />
+      {theme === 'Minimalist' ? (
+        <TyfDatePickerMinimalist />
+      ) : (
+        <TyfDatePickerInput
+          value={value}
+          placeholder={placeholder || 'Select Date'}
+          disabled={disabled}
+          onPress={toogleDatePicker}
+        />
+      )}
       <DatePicker
         modal
         theme="auto"

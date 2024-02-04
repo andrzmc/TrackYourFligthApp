@@ -13,7 +13,7 @@ const HomeRequesFlightByNumberLayout: FC = () => {
         options={[{value: '500', label: 'AM 500'}]}
         onChange={setState}
       />
-      <TyfDatePicker />
+      <TyfDatePicker disabled />
     </HomeRequestStyled>
   );
 };
