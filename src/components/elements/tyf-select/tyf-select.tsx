@@ -10,7 +10,7 @@ import {OptionsProps} from '@/models/interfaces/global/options';
 const TyfSelect: FC<TyfSelectProps> = props => {
   const isDarkMode = useColorScheme() === 'dark';
 
-  const {value, placeholder, options, onChange} = props;
+  const {value, placeholder, options, disabled, onChange} = props;
 
   const [isReady, setIsReady] = useState<boolean>();
   const [selectedOption, setSelectedOption] = useState<OptionsProps>();
@@ -48,7 +48,8 @@ const TyfSelect: FC<TyfSelectProps> = props => {
         placeholder={selectPlaceholder}
         onValueChange={onChange}
         fixAndroidTouchableBug={true}
-        items={options}>
+        items={options}
+        disabled={typeof disabled !== 'undefined' ? disabled : false}>
         <TyfSelectContent
           item={selectedOption}
           placeholder={selectPlaceholder as string}

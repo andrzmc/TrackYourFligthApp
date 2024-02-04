@@ -5,4 +5,5 @@ export interface TyfSelectProps {
   options: OptionsProps[];
   placeholder?: string;
   onChange: (value?: string) => void;
+  disabled?: boolean;
 }
