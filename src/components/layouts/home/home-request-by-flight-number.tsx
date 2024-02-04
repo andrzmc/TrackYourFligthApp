@@ -1,11 +1,17 @@
-import TyfTypography from '@/elements/tyf-typography/tyf-typography';
+import TyfSelect from '@/elements/tyf-select/tyf-select';
 import {HomeRequestStyled} from '@/styles/components/layouts/home/home-request';
-import React, {FC} from 'react';
+import React, {FC, useState} from 'react';
 
 const HomeRequesFlightByNumberLayout: FC = () => {
+  const [state, setState] = useState<string>();
+
   return (
     <HomeRequestStyled>
-      <TyfTypography text="Flight Number" color="Error" />
+      <TyfSelect
+        value={state}
+        options={[{value: '500', label: 'AM 500'}]}
+        onChange={setState}
+      />
     </HomeRequestStyled>
   );
 };
