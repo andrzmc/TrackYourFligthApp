@@ -1,3 +1,4 @@
+import TyfDatePicker from '@/elements/tyf-date-picker/tyf-date-picker';
 import TyfSelect from '@/elements/tyf-select/tyf-select';
 import {HomeRequestStyled} from '@/styles/components/layouts/home/home-request';
 import React, {FC, useState} from 'react';
@@ -12,6 +13,7 @@ const HomeRequesFlightByNumberLayout: FC = () => {
         options={[{value: '500', label: 'AM 500'}]}
         onChange={setState}
       />
+      <TyfDatePicker />
     </HomeRequestStyled>
   );
 };

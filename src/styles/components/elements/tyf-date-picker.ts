@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-export const TyfSelecStyled = styled.View`
+export const TyfDatePickerInputStyled = styled.View`
   width: auto;
   position: relative;
   border: 2px solid;
