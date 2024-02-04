@@ -2,11 +2,13 @@ import {TyfTypographyProps} from '@/models/interfaces/components/elements/tyf-ty
 import React, {FC, useEffect, useState} from 'react';
 import {StyleProp, TextStyle, Text, useColorScheme} from 'react-native';
 import {
-  TyfTypographyColorDarkTheme,
-  TyfTypographyColorLightTheme,
   TyfTypographyFontWeight,
   TyfTypographyVariant,
 } from './tyf-typography.utils';
+import {
+  SchemeColorDarkTheme,
+  SchemeColorLightTheme,
+} from '@/utils/global/color-scheme-mode';
 
 const TyfTypography: FC<TyfTypographyProps> = props => {
   const {text, fontWeight, variant, color, styles} = props;
@@ -38,11 +40,13 @@ const TyfTypography: FC<TyfTypographyProps> = props => {
   };
 
   const defineTextColorStyle = () => {
-    setColorStyle(
-      isDarkMode
-        ? TyfTypographyColorDarkTheme[color || 'Primary']
-        : TyfTypographyColorLightTheme[color || 'Primary']
-    );
+    const theme = isDarkMode
+      ? SchemeColorDarkTheme[color || 'Primary']
+      : SchemeColorLightTheme[color || 'Primary'];
+
+    if (theme) {
+      setColorStyle({color: (theme as TextStyle).color});
+    }
   };
 
   const defineTextVariantStyle = () => {

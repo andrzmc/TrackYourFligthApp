@@ -9,11 +9,3 @@ export type TyfTypographyVariantType =
   | 'Subheading'
   | 'Paragraph'
   | 'Small';
-
-export type TyfTypographyColorType =
-  | 'Primary'
-  | 'Secondary'
-  | 'Success'
-  | 'Warning'
-  | 'Error'
-  | 'Light';

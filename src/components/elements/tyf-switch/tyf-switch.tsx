@@ -14,9 +14,10 @@ const TyfSwitch: FC = () => {
         alignItems: 'center',
         justifyContent: 'space-between',
         flexDirection: 'row',
+        backgroundColor: '#ffffff',
       }}>
-      <TyfButton />
-      <TyfButton />
+      <TyfButton text="Flight Number" color="Primary" />
+      <TyfButton text="Destination" color="Light" />
     </View>
   );
 };
