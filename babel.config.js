@@ -21,7 +21,7 @@ module.exports = {
           '@/services': ['./src/services'],
           '@/styles': ['./src/styles'],
           '@/translation': ['./src/translation'],
-          '/@utils': ['./src/utils'],
+          '@/utils': ['./src/utils'],
         },
       },
     ],
