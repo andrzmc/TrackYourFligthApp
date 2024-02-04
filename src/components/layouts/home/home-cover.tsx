@@ -14,12 +14,14 @@ const HomeCoverLayout: FC = () => {
         <TyfTypography
           text="Track your flight"
           variant="Subheading"
-          fontWeight="Medium"
+          fontWeight="Bold"
+          styles={{textAlign: 'center'}}
         />
         <TyfTypography
           text="Keep you informed in real time!"
           variant="Paragraph"
           fontWeight="Light"
+          styles={{textAlign: 'center'}}
         />
       </HomeCoverTextStyled>
       <HomeCoverToogleStyled>
