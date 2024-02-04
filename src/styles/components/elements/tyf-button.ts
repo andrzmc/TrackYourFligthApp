@@ -5,4 +5,8 @@ export const TyfButtonStyle: StyleProp<ViewStyle> = {
   padding: 15,
   backgroundColor: 'black',
   borderRadius: 4,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  flexDirection: 'row',
 };
