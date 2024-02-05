@@ -29,7 +29,11 @@ const HomeRequesFlightByNumberLayout: FC = () => {
         />
       </HomeRequestGridStyled>
       <HomeRequestGridStyled>
-        <TyfButton text="Search Flight" styles={{borderRadius: 8}} />
+        <TyfButton
+          text="Search Flight"
+          fontVariant="Paragraph"
+          styles={{borderRadius: 8}}
+        />
       </HomeRequestGridStyled>
     </HomeRequestStyled>
   );
