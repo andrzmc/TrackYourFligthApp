@@ -32,18 +32,21 @@ export interface IFlightOutGate {
   sourceType: ISourceType;
 }
 
-export interface IFlightSegment {
+export interface IFlightSegment extends IFlightMarketingCatalogue {
   segmentCode: string;
-  departureAirport: IDepartureAirportType;
   arrivalAirport: IArrivalAirportType;
-  departureDateTime: Date | string;
   arrivalDateTime: Date | string;
   flightStatus: IFlightStatusType;
   operatingCarrier: ITingCarrierType;
-  marketingCarrier: ITingCarrierType;
   operatingFlightCode: string;
-  marketingFlightCode: string;
   flightDurationInMinutes: number;
   aircraftType: string;
   stops: object[];
+  departureAirport: IDepartureAirportType;
+}
+
+export interface IFlightMarketingCatalogue {
+  marketingFlightCode: string;
+  marketingCarrier: ITingCarrierType;
+  departureDateTime: Date | string;
 }

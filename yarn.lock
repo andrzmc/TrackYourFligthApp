@@ -5582,6 +5582,11 @@ lodash.debounce@^4.0.8:
   resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
   integrity sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==
 
+lodash.escaperegexp@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/lodash.escaperegexp/-/lodash.escaperegexp-4.1.2.tgz#64762c48618082518ac3df4ccf5d5886dae20347"
+  integrity sha512-TM9YBvyC84ZxE3rgfefxUWiQKLilstD6k7PTGt6wfbtXF8ixIJLOL3VYyV/z+ZiPLsVxAsKAFVwWlWeb2Y8Yyw==
+
 lodash.isequal@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
@@ -7267,6 +7272,13 @@ slice-ansi@^7.0.0:
   dependencies:
     ansi-styles "^6.2.1"
     is-fullwidth-code-point "^5.0.0"
+
+smart-array-filter@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/smart-array-filter/-/smart-array-filter-4.0.2.tgz#0192628799b1c2037efccbf80fe2e09bc4b00289"
+  integrity sha512-464VWG+bPW4pkXFucA4cVfN2cM9Y+x25LCxqkxap5HP+I4Fx0vFwIWlBw+rLi6FS4PEhfzmlMchQiCuDh9QuJw==
+  dependencies:
+    lodash.escaperegexp "^4.1.2"
 
 source-map-js@^1.0.2:
   version "1.0.2"
