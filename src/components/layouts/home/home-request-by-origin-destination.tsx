@@ -2,6 +2,7 @@ import TyfButton from '@/elements/tyf-button/tyf-button';
 import TyfDatePicker from '@/elements/tyf-date-picker/tyf-date-picker';
 import TyfSelect from '@/elements/tyf-select/tyf-select';
 import TyfTypography from '@/elements/tyf-typography/tyf-typography';
+import useNavigate from '@/hooks/use-navigate';
 import {OptionsProps} from '@/models/interfaces/global/options';
 import {IFlightAirportsCatalogue} from '@/models/interfaces/services/api/flight-status';
 import {GetFlightsByAirportService} from '@/services/api/flight-status';
@@ -9,12 +10,11 @@ import {
   HomeRequestGridStyled,
   HomeRequestStyled,
 } from '@/styles/components/layouts/home/home-request';
-import {useNavigation} from '@react-navigation/native';
 import React, {FC, useEffect, useState} from 'react';
 import {TouchableOpacity} from 'react-native';
 
 const HomeRequesFlightByOriginDestinationLayout: FC = () => {
-  const {navigate} = useNavigation();
+  const {onNavigateScreen} = useNavigate();
 
   const [isReady, setIsReady] = useState<boolean>();
   const [flightDeparture, setFlightDeparture] = useState<string>();
@@ -114,7 +114,7 @@ const HomeRequesFlightByOriginDestinationLayout: FC = () => {
           variant="Small"
           alignment="center"
         />
-        <TouchableOpacity onPress={() => navigate('HomeMainScreen' as never)}>
+        <TouchableOpacity onPress={() => onNavigateScreen('HomeMainScreen')}>
           <TyfTypography
             text="Try searching by flight number"
             variant="Small"
