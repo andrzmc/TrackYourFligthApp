@@ -11,7 +11,8 @@ import {
 } from '@/utils/global/color-scheme-mode';
 
 const TyfTypography: FC<TyfTypographyProps> = props => {
-  const {text, fontWeight, variant, color, styles} = props;
+  const {text, fontWeight, variant, color, alignment, decoration, styles} =
+    props;
 
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -19,6 +20,9 @@ const TyfTypography: FC<TyfTypographyProps> = props => {
   const [colorStyle, setColorStyle] = useState<StyleProp<TextStyle>>();
   const [variantStyle, setVariantStyle] = useState<StyleProp<TextStyle>>();
   const [weightStyle, setWeightStyle] = useState<StyleProp<TextStyle>>();
+  const [alignmentStyle, setAlignmentStyle] = useState<StyleProp<TextStyle>>();
+  const [decorationStyle, setDecorationStyle] =
+    useState<StyleProp<TextStyle>>();
 
   useEffect(() => {
     init();
@@ -26,13 +30,29 @@ const TyfTypography: FC<TyfTypographyProps> = props => {
   }, [props]);
 
   useEffect(() => {
-    setIsReady(!!text && !!colorStyle && !!variantStyle && !!weightStyle);
-  }, [text, colorStyle, variantStyle, weightStyle]);
+    setIsReady(
+      !!text &&
+        !!colorStyle &&
+        !!variantStyle &&
+        !!weightStyle &&
+        !!alignmentStyle &&
+        !!decorationStyle
+    );
+  }, [
+    text,
+    colorStyle,
+    variantStyle,
+    weightStyle,
+    alignmentStyle,
+    decorationStyle,
+  ]);
 
   const init = () => {
     defineTextColorStyle();
     defineTextVariantStyle();
     defineTextFontWeightStyle();
+    defineTextAlignmentStyle();
+    defineTextDecorationStyle();
   };
 
   const defineTextFontWeightStyle = () => {
@@ -53,8 +73,26 @@ const TyfTypography: FC<TyfTypographyProps> = props => {
     setVariantStyle(TyfTypographyVariant[variant || 'Paragraph']);
   };
 
+  const defineTextAlignmentStyle = () => {
+    setAlignmentStyle({textAlign: alignment || 'left'});
+  };
+
+  const defineTextDecorationStyle = () => {
+    setDecorationStyle({textDecorationLine: decoration || 'none'});
+  };
+
   return isReady ? (
-    <Text style={[weightStyle, colorStyle, variantStyle, styles]}>{text}</Text>
+    <Text
+      style={[
+        weightStyle,
+        colorStyle,
+        variantStyle,
+        alignmentStyle,
+        decorationStyle,
+        styles,
+      ]}>
+      {text}
+    </Text>
   ) : null;
 };
 

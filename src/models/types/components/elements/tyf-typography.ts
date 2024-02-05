@@ -9,3 +9,16 @@ export type TyfTypographyVariantType =
   | 'Subheading'
   | 'Paragraph'
   | 'Small';
+
+export type TyfTypographyAlignmentType =
+  | 'auto'
+  | 'center'
+  | 'justify'
+  | 'right'
+  | 'left';
+
+export type TyfTypographyDecorationType =
+  | 'none'
+  | 'underline'
+  | 'line-through'
+  | 'underline line-through';
