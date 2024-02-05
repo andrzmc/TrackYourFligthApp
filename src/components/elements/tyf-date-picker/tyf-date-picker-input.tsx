@@ -20,7 +20,7 @@ const TyfDatePickerInput: FC<TyfDatePickerContentProps> = props => {
       <TyfDatePickerInputStyled
         style={{borderColor: isDarkMode ? ColorLightStyle : ColorPrimaryStyle}}>
         <TyfTypography
-          text={placeholder}
+          text={placeholder as string}
           variant={value ? 'Small' : 'Paragraph'}
         />
         {value && (

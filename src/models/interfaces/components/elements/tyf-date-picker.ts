@@ -10,7 +10,7 @@ export interface TyfDatePickerProps {
 
 export interface TyfDatePickerContentProps {
   value?: Date;
-  placeholder: string;
+  placeholder?: string;
   disabled?: boolean;
   onPress: () => void;
 }

@@ -55,7 +55,11 @@ const HomeRequesFlightByNumberLayout: FC = () => {
   };
 
   const navigatetoSelectedFlight = () => {
-    const params = {flightCode, flightDate};
+    const data = catalogue?.find(
+      item => item.marketingFlightCode === flightCode
+    );
+    const flightCarrier = data?.marketingCarrier;
+    const params = {flightCode, flightDate, flightCarrier};
     onNavigateOtherStack('FlightNavigation', 'FlightRequestScreen', params);
   };
 

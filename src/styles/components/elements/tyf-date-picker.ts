@@ -1,5 +1,13 @@
 import styled from 'styled-components/native';
 
+export const TyfDatePickerMinimalistStyled = styled.View`
+  width: auto;
+  padding: ${8}px ${2}px;
+  display: flex;
+  flex-flow: wrap row;
+  gap: 4px;
+`;
+
 export const TyfDatePickerInputStyled = styled.View`
   width: auto;
   position: relative;
