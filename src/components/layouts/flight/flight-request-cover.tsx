@@ -10,8 +10,7 @@ import {View} from 'react-native';
 const FlightRequestCoverLayout: FC = () => {
   const {getScreenParams} = useNavigate();
 
-  const [flightCode, setFlightCode] = useState<string>();
-  const [flightCarrier, setFlightCarrier] = useState<string>();
+  const [routeParams, setRouteParams] = useState<IRouteParamsFlightCover>();
   const [flightDate, setFlightDate] = useState<Date>();
 
   useEffect(() => {
@@ -22,25 +21,30 @@ const FlightRequestCoverLayout: FC = () => {
   const init = () => {
     const params = getScreenParams() as IRouteParamsFlightCover;
     if (params) {
+      setRouteParams(params);
       setFlightDate(params.flightDate);
-      setFlightCode(params.flightCode);
-      setFlightCarrier(params.flightCarrier);
     }
   };
 
-  return (
+  return routeParams ? (
     <FlightRequestCoverStyled>
       <CaretLeft weight="regular" size={32} />
       <View>
-        {flightCode && flightCarrier ? (
-          <TyfTypography
-            text={`${flightCarrier} ${flightCode}`}
-            variant="Heading"
-            fontWeight="Bold"
-            alignment="right"
-          />
-        ) : null}
-        {flightDate && (
+        <>
+          {routeParams.flightType ? (
+            <TyfTypography
+              text={
+                routeParams.flightType === 'code'
+                  ? `${routeParams.flightCarrier} ${routeParams.flightCode}`
+                  : `${routeParams.flightDeparture} → ${routeParams.flightArrival}`
+              }
+              variant="Heading"
+              fontWeight="Bold"
+              alignment="right"
+            />
+          ) : null}
+        </>
+        {routeParams.flightDate && (
           <TyfDatePicker
             value={flightDate}
             theme="Minimalist"
@@ -49,7 +53,7 @@ const FlightRequestCoverLayout: FC = () => {
         )}
       </View>
     </FlightRequestCoverStyled>
-  );
+  ) : null;
 };
 
 export default FlightRequestCoverLayout;

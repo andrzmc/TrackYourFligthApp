@@ -4,6 +4,7 @@ import TyfSelect from '@/elements/tyf-select/tyf-select';
 import TyfTypography from '@/elements/tyf-typography/tyf-typography';
 import useNavigate from '@/hooks/use-navigate';
 import {OptionsProps} from '@/models/interfaces/global/options';
+import {IRouteParamsFlightCover} from '@/models/interfaces/routes/params';
 import {IFlightMarketingCatalogue} from '@/models/interfaces/services/api/flight-status';
 import {GetFlightsStatusNumberService} from '@/services/api/flight-status';
 import {
@@ -55,12 +56,22 @@ const HomeRequesFlightByNumberLayout: FC = () => {
   };
 
   const navigatetoSelectedFlight = () => {
+    const params = getRouteParams();
+    onNavigateOtherStack('FlightNavigation', 'FlightRequestScreen', params);
+  };
+
+  const getRouteParams = () => {
     const data = catalogue?.find(
       item => item.marketingFlightCode === flightCode
     );
     const flightCarrier = data?.marketingCarrier;
-    const params = {flightCode, flightDate, flightCarrier};
-    onNavigateOtherStack('FlightNavigation', 'FlightRequestScreen', params);
+
+    return {
+      flightCode,
+      flightDate,
+      flightCarrier,
+      flightType: 'code',
+    } as IRouteParamsFlightCover;
   };
 
   return (

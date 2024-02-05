@@ -4,6 +4,7 @@ import TyfSelect from '@/elements/tyf-select/tyf-select';
 import TyfTypography from '@/elements/tyf-typography/tyf-typography';
 import useNavigate from '@/hooks/use-navigate';
 import {OptionsProps} from '@/models/interfaces/global/options';
+import {IRouteParamsFlightCover} from '@/models/interfaces/routes/params';
 import {IFlightAirportsCatalogue} from '@/models/interfaces/services/api/flight-status';
 import {GetFlightsByAirportService} from '@/services/api/flight-status';
 import {
@@ -14,7 +15,7 @@ import React, {FC, useEffect, useState} from 'react';
 import {TouchableOpacity} from 'react-native';
 
 const HomeRequesFlightByOriginDestinationLayout: FC = () => {
-  const {onNavigateScreen} = useNavigate();
+  const {onNavigateScreen, onNavigateOtherStack} = useNavigate();
 
   const [isReady, setIsReady] = useState<boolean>();
   const [flightDeparture, setFlightDeparture] = useState<string>();
@@ -66,7 +67,17 @@ const HomeRequesFlightByOriginDestinationLayout: FC = () => {
   };
 
   const navigatetoSelectedFlight = () => {
-    console.log({flightDeparture, flightArrival, flightDate});
+    const params = getRouteParams();
+    onNavigateOtherStack('FlightNavigation', 'FlightRequestScreen', params);
+  };
+
+  const getRouteParams = () => {
+    return {
+      flightDate,
+      flightDeparture,
+      flightArrival,
+      flightType: 'origin-destiny',
+    } as IRouteParamsFlightCover;
   };
 
   return (
