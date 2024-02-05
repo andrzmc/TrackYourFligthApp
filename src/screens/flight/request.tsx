@@ -1,14 +1,14 @@
 import TyfTypography from '@/elements/tyf-typography/tyf-typography';
-import {useRoute} from '@react-navigation/native';
+import useNavigate from '@/hooks/use-navigate';
 import React, {useEffect} from 'react';
 import {SafeAreaView} from 'react-native';
 
 const FlightRequestScreen = () => {
-  const {params} = useRoute();
+  const {getScreenParams} = useNavigate();
 
   useEffect(() => {
-    console.log(params);
-  }, [params]);
+    console.log(getScreenParams());
+  }, [getScreenParams]);
 
   return (
     <SafeAreaView>
