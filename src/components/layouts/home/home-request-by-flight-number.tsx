@@ -38,12 +38,14 @@ const HomeRequesFlightByNumberLayout: FC = () => {
   const getFlightsNumberCatalogue = async () => {
     const response = await GetFlightsStatusNumberService();
     setCatalogue(response);
-    setOptions(
-      response.map(item => ({
-        value: item.marketingFlightCode,
-        label: `${item.marketingCarrier} ${item.marketingFlightCode}`,
-      }))
-    );
+    setOptions(formatterOptions(response));
+  };
+
+  const formatterOptions = (value: IFlightMarketingCatalogue[]) => {
+    return value.map(item => ({
+      value: item.marketingFlightCode,
+      label: `${item.marketingCarrier} ${item.marketingFlightCode}`,
+    }));
   };
 
   const handdleSelect = (event?: string) => {
@@ -53,7 +55,7 @@ const HomeRequesFlightByNumberLayout: FC = () => {
   };
 
   const navigatetoSelectedFlight = () => {
-    console.log(flightCode);
+    console.log({flightCode, flightDate});
   };
 
   return (
@@ -73,6 +75,7 @@ const HomeRequesFlightByNumberLayout: FC = () => {
               value={flightDate}
               placeholder="Date of departure"
               onChange={setFlightDate}
+              disabled
             />
           </HomeRequestGridStyled>
         </>

@@ -6,9 +6,7 @@ export type IAccuracyType = 'Actual' | 'Estimated';
 
 export type ISourceType = 'AirlineData';
 
-export type IArrivalAirportType = 'CUN';
-
-export type IDepartureAirportType = 'MEX';
+export type IAirportsLocationType = 'MEX' | 'CUN';
 
 export type IFlightStatusType = 'ARRIVED' | 'DELAYED' | 'ON_TIME';
 

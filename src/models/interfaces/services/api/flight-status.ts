@@ -1,7 +1,6 @@
 import {
   IAccuracyType,
-  IArrivalAirportType,
-  IDepartureAirportType,
+  IAirportsLocationType,
   IFlightGateType,
   IFlightLegType,
   IFlightStatusType,
@@ -34,7 +33,6 @@ export interface IFlightOutGate {
 
 export interface IFlightSegment extends IFlightMarketingCatalogue {
   segmentCode: string;
-  arrivalAirport: IArrivalAirportType;
   arrivalDateTime: Date | string;
   flightStatus: IFlightStatusType;
   operatingCarrier: ITingCarrierType;
@@ -42,11 +40,17 @@ export interface IFlightSegment extends IFlightMarketingCatalogue {
   flightDurationInMinutes: number;
   aircraftType: string;
   stops: object[];
-  departureAirport: IDepartureAirportType;
+  departureAirport: IAirportsLocationType;
+  arrivalAirport: IAirportsLocationType;
 }
 
 export interface IFlightMarketingCatalogue {
   marketingFlightCode: string;
   marketingCarrier: ITingCarrierType;
   departureDateTime: Date | string;
+}
+
+export interface IFlightAirportsCatalogue {
+  airport: IAirportsLocationType;
+  location: string;
 }
