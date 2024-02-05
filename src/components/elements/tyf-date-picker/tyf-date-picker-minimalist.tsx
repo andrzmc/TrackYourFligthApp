@@ -4,6 +4,7 @@ import TyfTypography from '../tyf-typography/tyf-typography';
 import {TyfDatePickerContentProps} from '@/models/interfaces/components/elements/tyf-date-picker';
 import moment from 'moment';
 import {TyfDatePickerMinimalistStyled} from '@/styles/components/elements/tyf-date-picker';
+import {CalendarBlank} from 'phosphor-react-native';
 
 const TyfDatePickerMinimalist: FC<TyfDatePickerContentProps> = props => {
   const {value, disabled, onPress} = props;
@@ -16,6 +17,7 @@ const TyfDatePickerMinimalist: FC<TyfDatePickerContentProps> = props => {
           variant="Small"
         />
         <TyfTypography text="|" variant="Small" />
+        <CalendarBlank size={16} />
         <TyfTypography
           text="Change"
           fontWeight="Medium"

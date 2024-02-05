@@ -1,8 +1,12 @@
 import {useNavigation, useRoute} from '@react-navigation/native';
 
 const useNavigate = () => {
-  const {navigate} = useNavigation();
+  const {navigate, setParams} = useNavigation();
   const {params: parameters} = useRoute();
+
+  const getScreenParams = () => {
+    return parameters;
+  };
 
   const onNavigateScreen = (screen: string, params?: unknown) => {
     navigate(screen, {params});
@@ -16,14 +20,15 @@ const useNavigate = () => {
     navigate(stack, {screen, params});
   };
 
-  const getScreenParams = () => {
-    return parameters;
+  const onUpdateParams = (params?: unknown) => {
+    setParams(params as undefined);
   };
 
   return {
     getScreenParams,
     onNavigateOtherStack,
     onNavigateScreen,
+    onUpdateParams,
   };
 };
 
