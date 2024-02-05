@@ -20,8 +20,8 @@ export const HomeCoverTextStyled = styled.View`
 
 export const HomeCoverToogleStyled = styled.View`
   position: absolute;
-  left: 20%;
-  right: 20%;
-  width: 60%;
+  left: 15%;
+  right: 15%;
+  width: 70%;
   bottom: -${25}px;
 `;

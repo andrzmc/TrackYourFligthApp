@@ -7,18 +7,25 @@ import {
 import {NavigationContainer, Theme} from '@react-navigation/native';
 import React, {FC, useEffect, useState} from 'react';
 import {useColorScheme} from 'react-native';
+import {IconContext, IconProps} from 'phosphor-react-native';
 
 const GlobalColorSchemeModule: FC<ChildrenProps> = props => {
   const {children} = props;
 
   const isDarkMode = useColorScheme() === 'dark';
 
+  const [isReady, setIsReady] = useState<boolean>();
   const [theme, setTheme] = useState<Theme>();
+  const [iconColor, setIconColor] = useState<IconProps>();
 
   useEffect(() => {
     init();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    setIsReady(!!theme && !!iconColor);
+  }, [theme, iconColor]);
 
   const init = () => {
     defineColorMode();
@@ -29,6 +36,15 @@ const GlobalColorSchemeModule: FC<ChildrenProps> = props => {
     const schemeContent = !isDarkMode ? ColorPrimaryStyle : ColorLightStyle;
     const border = !isDarkMode ? ColorTertiaryStyle : ColorLightStyle;
 
+    defineColorTheme(schemeTheme, schemeContent, border);
+    defineColorIcon(schemeContent);
+  };
+
+  const defineColorTheme = (
+    schemeTheme: string,
+    schemeContent: string,
+    border: string
+  ) => {
     setTheme({
       dark: isDarkMode,
       colors: {
@@ -42,7 +58,21 @@ const GlobalColorSchemeModule: FC<ChildrenProps> = props => {
     });
   };
 
-  return <NavigationContainer theme={theme}>{children}</NavigationContainer>;
+  const defineColorIcon = (schemeContent: string) => {
+    setIconColor({
+      color: schemeContent,
+      size: 24,
+      weight: 'fill',
+    });
+  };
+
+  return isReady ? (
+    <NavigationContainer theme={theme}>
+      <IconContext.Provider value={iconColor as IconProps}>
+        {children}
+      </IconContext.Provider>
+    </NavigationContainer>
+  ) : null;
 };
 
 export default GlobalColorSchemeModule;

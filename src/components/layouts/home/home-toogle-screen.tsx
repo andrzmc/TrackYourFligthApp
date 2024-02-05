@@ -28,11 +28,13 @@ const HomeToogleScreenLayout: FC = () => {
         text="Flight Number"
         color={getButtonStatus('HomeMainScreen')}
         onClick={() => onToggleRoute('HomeMainScreen')}
+        styles={{width: '50%'}}
       />
       <TyfButton
         text="Destination"
         color={getButtonStatus('HomeDestinationScreen')}
         onClick={() => onToggleRoute('HomeDestinationScreen')}
+        styles={{width: '50%'}}
       />
     </HomeToogleScreenStyled>
   );

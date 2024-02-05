@@ -1,4 +1,6 @@
 import {
+  TyfTypographyAlignmentType,
+  TyfTypographyDecorationType,
   TyfTypographyFontWeightType,
   TyfTypographyVariantType,
 } from '@/models/types/components/elements/tyf-typography';
@@ -10,5 +12,7 @@ export interface TyfTypographyProps {
   fontWeight?: TyfTypographyFontWeightType;
   variant?: TyfTypographyVariantType;
   color?: ColorStyleType;
+  alignment?: TyfTypographyAlignmentType;
+  decoration?: TyfTypographyDecorationType;
   styles?: StyleProp<TextStyle>;
 }

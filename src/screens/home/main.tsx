@@ -1,5 +1,5 @@
-import TyfTypography from '@/elements/tyf-typography/tyf-typography';
 import HomeCoverLayout from '@/layouts/home/home-cover';
+import HomeRequesFlightByNumberLayout from '@/layouts/home/home-request-by-flight-number';
 import React, {FC} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
@@ -7,7 +7,7 @@ const HomeMainScreen: FC = () => {
   return (
     <SafeAreaView>
       <HomeCoverLayout />
-      <TyfTypography text="Flight Number" color="Error" />
+      <HomeRequesFlightByNumberLayout />
     </SafeAreaView>
   );
 };

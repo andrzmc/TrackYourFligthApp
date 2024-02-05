@@ -16,7 +16,7 @@ import {
 import {ButtonContentColorTheme} from './tyf-button.util';
 
 const TyfButton: FC<TyfButtonProps> = props => {
-  const {text, color, styles, onClick} = props;
+  const {text, color, styles, disabled, fontVariant, onClick} = props;
 
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -56,11 +56,12 @@ const TyfButton: FC<TyfButtonProps> = props => {
   return isReady ? (
     <TouchableOpacity
       style={[TyfButtonStyle, backgroundStyle, styles]}
+      disabled={disabled}
       onPress={onClick}>
       <TyfTypography
         text={text}
         fontWeight="Medium"
-        variant="Small"
+        variant={fontVariant || 'Small'}
         styles={colorStyle}
       />
     </TouchableOpacity>

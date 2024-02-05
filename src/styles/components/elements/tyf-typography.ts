@@ -29,7 +29,7 @@ export const TyfTypographyHeadingStyle: StyleProp<TextStyle> = {
 };
 
 export const TyfTypographySubheadingStyle: StyleProp<TextStyle> = {
-  fontSize: 24,
+  fontSize: 26,
   lineHeight: 32,
   letterSpacing: 0.25,
 };
