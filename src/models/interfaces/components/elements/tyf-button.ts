@@ -5,5 +5,6 @@ export interface TyfButtonProps {
   text: string;
   color?: ColorStyleType;
   styles?: StyleProp<ViewStyle>;
+  disabled?: boolean;
   onClick?: () => void;
 }

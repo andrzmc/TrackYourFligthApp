@@ -6,6 +6,12 @@ export const HomeRequestStyled = styled.View`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  flex-direction: row;
+  flex-flow: row wrap;
   position: relative;
+  gap: ${8}px;
+`;
+
+export const HomeRequestGridStyled = styled.View`
+  flex-grow: 1;
+  margin-bottom: ${8}px;
 `;

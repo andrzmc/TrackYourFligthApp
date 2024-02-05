@@ -25,7 +25,7 @@ const TyfDatePickerInput: FC<TyfDatePickerContentProps> = props => {
               text={moment(value).format('dddd, MMM DD')}
               fontWeight="Medium"
             />
-            <CalendarBlank />
+            <CalendarBlank size={16} />
           </TyfDatePickerInputContentStyled>
         )}
       </TyfDatePickerInputStyled>
