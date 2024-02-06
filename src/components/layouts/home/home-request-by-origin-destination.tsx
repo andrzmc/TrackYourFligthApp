@@ -76,7 +76,7 @@ const HomeRequesFlightByOriginDestinationLayout: FC = () => {
       flightDate,
       flightDeparture,
       flightArrival,
-      flightType: 'origin-destiny',
+      flightType: 'travel',
     } as IRouteParamsFlightCover;
   };
 

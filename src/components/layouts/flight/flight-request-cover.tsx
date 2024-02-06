@@ -2,6 +2,7 @@ import TyfDatePicker from '@/elements/tyf-date-picker/tyf-date-picker';
 import TyfTypography from '@/elements/tyf-typography/tyf-typography';
 import useNavigate from '@/hooks/use-navigate';
 import {IRouteParamsFlightCover} from '@/models/interfaces/routes/params';
+import {IFlightStatusCollection} from '@/models/interfaces/services/api/flight-status';
 import {
   FlightRequestCoverHeadStyled,
   FlightRequestCoverStyled,
@@ -12,8 +13,9 @@ import {TouchableOpacity, View} from 'react-native';
 
 const FlightRequestCoverLayout: FC<{
   routeParams: IRouteParamsFlightCover;
+  flights: IFlightStatusCollection[];
 }> = props => {
-  const {routeParams} = props;
+  const {routeParams, flights} = props;
   const {onUpdateParams} = useNavigate();
 
   const updateDateParams = (event: Date) => {
@@ -53,14 +55,18 @@ const FlightRequestCoverLayout: FC<{
       <FlightRequestCoverHeadStyled style={{marginTop: 24}}>
         <View>
           <TyfTypography
-            text={`${routeParams.flightDeparture} → ${routeParams.flightArrival}`}
+            text={
+              routeParams.flightType === 'code'
+                ? `${flights.length ? `${flights[0].segment.departureAirport} to ${flights[0].segment.arrivalAirport}` : ''}`
+                : `${routeParams.flightDeparture} → ${routeParams.flightArrival}`
+            }
             variant="Small"
             fontWeight="Bold"
           />
         </View>
         <View>
           <TyfTypography
-            text={`X results`}
+            text={`${flights.length} results`}
             variant="Small"
             color="Tertiary"
             fontWeight="Regular"

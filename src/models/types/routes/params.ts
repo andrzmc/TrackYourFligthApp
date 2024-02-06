@@ -1,1 +1,1 @@
-export type IRouteParamsFlightCoverType = 'code' | 'origin-destiny';
+export type IRouteParamsFlightCoverType = 'code' | 'travel';
