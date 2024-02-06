@@ -1,13 +1,11 @@
-import TyfTypography from '@/elements/tyf-typography/tyf-typography';
-import FlightRequestCoverLayout from '@/layouts/flight/flight-request-cover';
+import FlightRequestModule from '@/modules/flight/flight-request';
 import React from 'react';
 import {SafeAreaView} from 'react-native';
 
 const FlightRequestScreen = () => {
   return (
     <SafeAreaView>
-      <FlightRequestCoverLayout />
-      <TyfTypography text="FlightRequestScreen" />
+      <FlightRequestModule />
     </SafeAreaView>
   );
 };

@@ -7,25 +7,14 @@ import {
   FlightRequestCoverStyled,
 } from '@/styles/components/layouts/flight/flight-request-cover';
 import {CaretLeft} from 'phosphor-react-native';
-import React, {FC, useEffect, useState} from 'react';
-import {View} from 'react-native';
+import React, {FC} from 'react';
+import {TouchableOpacity, View} from 'react-native';
 
-const FlightRequestCoverLayout: FC = () => {
-  const {getScreenParams, onUpdateParams} = useNavigate();
-
-  const [routeParams, setRouteParams] = useState<IRouteParamsFlightCover>();
-
-  useEffect(() => {
-    init();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [getScreenParams]);
-
-  const init = () => {
-    const params = getScreenParams() as IRouteParamsFlightCover;
-    if (params) {
-      setRouteParams(params);
-    }
-  };
+const FlightRequestCoverLayout: FC<{
+  routeParams: IRouteParamsFlightCover;
+}> = props => {
+  const {routeParams} = props;
+  const {onUpdateParams} = useNavigate();
 
   const updateDateParams = (event: Date) => {
     onUpdateParams({flightDate: event});
@@ -34,7 +23,9 @@ const FlightRequestCoverLayout: FC = () => {
   return routeParams ? (
     <FlightRequestCoverStyled>
       <FlightRequestCoverHeadStyled>
-        <CaretLeft weight="regular" size={32} />
+        <TouchableOpacity>
+          <CaretLeft weight="regular" size={32} />
+        </TouchableOpacity>
         <View>
           <>
             {routeParams.flightType ? (
@@ -57,6 +48,23 @@ const FlightRequestCoverLayout: FC = () => {
               onChange={updateDateParams}
             />
           )}
+        </View>
+      </FlightRequestCoverHeadStyled>
+      <FlightRequestCoverHeadStyled style={{marginTop: 24}}>
+        <View>
+          <TyfTypography
+            text={`${routeParams.flightDeparture} → ${routeParams.flightArrival}`}
+            variant="Small"
+            fontWeight="Bold"
+          />
+        </View>
+        <View>
+          <TyfTypography
+            text={`X results`}
+            variant="Small"
+            color="Tertiary"
+            fontWeight="Regular"
+          />
         </View>
       </FlightRequestCoverHeadStyled>
     </FlightRequestCoverStyled>

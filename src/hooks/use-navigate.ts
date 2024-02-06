@@ -1,7 +1,7 @@
 import {useNavigation, useRoute} from '@react-navigation/native';
 
 const useNavigate = () => {
-  const {navigate, setParams} = useNavigation();
+  const {navigate, setParams, goBack} = useNavigation();
   const {params: parameters} = useRoute();
 
   const getScreenParams = () => {
@@ -25,6 +25,7 @@ const useNavigate = () => {
   };
 
   return {
+    goBack,
     getScreenParams,
     onNavigateOtherStack,
     onNavigateScreen,
