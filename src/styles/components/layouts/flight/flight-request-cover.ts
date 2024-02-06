@@ -2,7 +2,6 @@ import styled from 'styled-components/native';
 
 export const FlightRequestCoverStyled = styled.View`
   width: 100%;
-  height: ${200}px;
   padding: ${16}px;
 `;
 

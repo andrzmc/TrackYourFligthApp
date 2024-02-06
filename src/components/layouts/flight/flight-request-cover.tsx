@@ -1,8 +1,7 @@
 import TyfDatePicker from '@/elements/tyf-date-picker/tyf-date-picker';
 import TyfTypography from '@/elements/tyf-typography/tyf-typography';
 import useNavigate from '@/hooks/use-navigate';
-import {IRouteParamsFlightCover} from '@/models/interfaces/routes/params';
-import {IFlightStatusCollection} from '@/models/interfaces/services/api/flight-status';
+import {FlightRequestCoverProps} from '@/models/interfaces/components/layouts/flight-request-cover';
 import {
   FlightRequestCoverHeadStyled,
   FlightRequestCoverStyled,
@@ -11,10 +10,7 @@ import {CaretLeft} from 'phosphor-react-native';
 import React, {FC} from 'react';
 import {TouchableOpacity, View} from 'react-native';
 
-const FlightRequestCoverLayout: FC<{
-  routeParams: IRouteParamsFlightCover;
-  flights: IFlightStatusCollection[];
-}> = props => {
+const FlightRequestCoverLayout: FC<FlightRequestCoverProps> = props => {
   const {routeParams, flights} = props;
   const {onUpdateParams} = useNavigate();
 
