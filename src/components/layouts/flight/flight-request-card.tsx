@@ -25,9 +25,7 @@ const FlightRequestCardLayout: FC<IFlightStatusCollection> = props => {
   const {onNavigateScreen} = useNavigate();
 
   const onNavigateFlightDetails = () => {
-    onNavigateScreen('FlightDetailScreen', {
-      flightCode: segment.marketingFlightCode,
-    });
+    onNavigateScreen('FlightDetailScreen', props);
   };
 
   return (

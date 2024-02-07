@@ -17,6 +17,7 @@ const FlightStackScreens: StackScreen[] = [
     name: 'FlightDetailScreen',
     options: {
       headerShown: false,
+      presentation: 'containedModal',
     },
   },
   {

@@ -21,7 +21,7 @@ const FlightDetailsCoverLayout: FC = () => {
       <ImageBackground
         source={require('@/images/CUN.jpg')}
         resizeMode="cover"
-        style={{height: Dimensions.get('screen').height * 0.75}}>
+        style={{height: Dimensions.get('screen').height}}>
         <SafeAreaView>
           <FlightDetailsCoverBackStyled
             style={{
