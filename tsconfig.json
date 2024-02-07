@@ -9,7 +9,7 @@
       "@/documents/*": ["assets/documents/*"],
       "@/elements/*": ["src/components/elements/*"],
       "@/fonts/*": ["assets/fonts/*"],
-      "@/images": ["assets/images/*"],
+      "@/images/*": ["assets/images/*"],
       "@/models/*": ["src/models/*"],
       "@/hooks/*": ["src/hooks/*"],
       "@/layouts/*": ["src/components/layouts/*"],

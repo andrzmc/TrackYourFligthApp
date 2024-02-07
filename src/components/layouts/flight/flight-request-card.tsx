@@ -6,38 +6,24 @@ import {
 } from '@/models/enums/components/layouts/flight/flight-request-card';
 import {IFlightStatusCollection} from '@/models/interfaces/services/api/flight-status';
 import {
+  FlightRequestCardFooterLinkStyled,
+  FlightRequestCardFooterStyled,
   FlightRequestCardStatusStyle,
   FlightRequestCardStatusStyled,
   FlightRequestCardStyled,
   FlightRequestCardTimeStyled,
 } from '@/styles/components/layouts/flight/flight-request-card';
-import {ColorLightStyle, ColorPrimaryStyle} from '@/styles/global/colors';
+import {flightRequestCardImageUtil} from '@/utils/components/layouts/flight/flight-request-card';
 import moment from 'moment';
-import React, {FC, useEffect, useState} from 'react';
-import {Image, View, useColorScheme} from 'react-native';
+import {CaretRight} from 'phosphor-react-native';
+import React, {FC} from 'react';
+import {Image, ImageSourcePropType, TouchableOpacity, View} from 'react-native';
 
 const FlightRequestCardLayout: FC<IFlightStatusCollection> = props => {
   const {segment, status, estimatedDepartureTime, estimatedArrivalTime} = props;
 
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const [borderColor, setBorderColor] = useState<string>();
-
-  useEffect(() => {
-    init();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const init = () => {
-    defineCardStyles();
-  };
-
-  const defineCardStyles = () => {
-    setBorderColor(isDarkMode ? ColorLightStyle : ColorPrimaryStyle);
-  };
-
   return (
-    <FlightRequestCardStyled style={{borderColor}}>
+    <FlightRequestCardStyled>
       <FlightRequestCardStatusStyled>
         <TyfButton
           text={IFlightStatus[status]}
@@ -46,7 +32,7 @@ const FlightRequestCardLayout: FC<IFlightStatusCollection> = props => {
           disabled
         />
       </FlightRequestCardStatusStyled>
-      <FlightRequestCardTimeStyled>
+      <FlightRequestCardTimeStyled style={{borderBottomWidth: 1}}>
         <View>
           <TyfTypography
             text={moment(new Date(estimatedDepartureTime)).format('hh:mm A')}
@@ -54,11 +40,11 @@ const FlightRequestCardLayout: FC<IFlightStatusCollection> = props => {
           />
           <TyfTypography text={segment.departureAirport} variant="Small" />
         </View>
-        <View>
-          <Image
-            source={require(`../../../../assets/images/ARRIVAL-flight.png`)}
-          />
-        </View>
+        <Image
+          style={{width: 160}}
+          resizeMode="stretch"
+          source={flightRequestCardImageUtil[status] as ImageSourcePropType}
+        />
         <View>
           <TyfTypography
             text={moment(new Date(estimatedArrivalTime)).format('hh:mm A')}
@@ -72,6 +58,25 @@ const FlightRequestCardLayout: FC<IFlightStatusCollection> = props => {
           />
         </View>
       </FlightRequestCardTimeStyled>
+      <FlightRequestCardFooterStyled>
+        <TyfTypography
+          text={`${segment.marketingCarrier} ${segment.marketingFlightCode}`}
+          fontWeight="Medium"
+          alignment="right"
+          variant="Small"
+        />
+        <TouchableOpacity>
+          <FlightRequestCardFooterLinkStyled>
+            <TyfTypography
+              text="Details"
+              alignment="right"
+              variant="Small"
+              decoration="underline"
+            />
+            <CaretRight size={12} weight="regular" />
+          </FlightRequestCardFooterLinkStyled>
+        </TouchableOpacity>
+      </FlightRequestCardFooterStyled>
     </FlightRequestCardStyled>
   );
 };

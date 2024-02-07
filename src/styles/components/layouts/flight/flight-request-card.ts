@@ -3,8 +3,7 @@ import styled from 'styled-components/native';
 
 export const FlightRequestCardStyled = styled.View`
   width: 100%;
-  padding: ${32}px ${16}px ${4}px ${16}px;
-  border: 2px solid;
+  border: ${2}px solid;
   border-radius: ${12}px;
   margin-bottom: ${16}px;
   position: relative;
@@ -31,6 +30,23 @@ export const FlightRequestCardTimeStyled = styled.View`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-flow: wrap row;
+  flex-flow: row;
   gap: ${4}px;
+  padding: ${32}px ${8}px ${4}px ${8}px;
+`;
+
+export const FlightRequestCardFooterStyled = styled.View`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row;
+  padding: ${4}px ${8}px ${4}px ${8}px;
+`;
+
+export const FlightRequestCardFooterLinkStyled = styled.View`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-flow: row;
 `;
