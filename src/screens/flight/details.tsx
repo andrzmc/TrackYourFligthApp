@@ -1,7 +1,8 @@
 import TyfTypography from '@/elements/tyf-typography/tyf-typography';
 import useNavigate from '@/hooks/use-navigate';
+import FlightDetailsModule from '@/modules/flight/flight-details';
 import React, {useEffect, useState} from 'react';
-import {ImageBackground, TouchableOpacity, View} from 'react-native';
+import {TouchableOpacity, View} from 'react-native';
 import {SwipeablePanel} from 'rn-swipeable-panel';
 
 const FlightDetailScreen = () => {
@@ -23,11 +24,7 @@ const FlightDetailScreen = () => {
 
   return (
     <View>
-      <ImageBackground
-        source={require('@/images/MEX.png')}
-        resizeMode="cover"
-        style={{width: '100%', height: 350}}
-      />
+      <FlightDetailsModule />
       <TouchableOpacity onPress={openPanel}>
         <TyfTypography text="FlightDetailScreen" />
       </TouchableOpacity>
