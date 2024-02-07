@@ -1,5 +1,6 @@
 import TyfButton from '@/elements/tyf-button/tyf-button';
 import TyfTypography from '@/elements/tyf-typography/tyf-typography';
+import useNavigate from '@/hooks/use-navigate';
 import {
   IFlightColorStatus,
   IFlightStatus,
@@ -21,6 +22,13 @@ import {Image, ImageSourcePropType, TouchableOpacity, View} from 'react-native';
 
 const FlightRequestCardLayout: FC<IFlightStatusCollection> = props => {
   const {segment, status, estimatedDepartureTime, estimatedArrivalTime} = props;
+  const {onNavigateScreen} = useNavigate();
+
+  const onNavigateFlightDetails = () => {
+    onNavigateScreen('FlightDetailScreen', {
+      flightCode: segment.marketingFlightCode,
+    });
+  };
 
   return (
     <FlightRequestCardStyled>
@@ -65,7 +73,7 @@ const FlightRequestCardLayout: FC<IFlightStatusCollection> = props => {
           alignment="right"
           variant="Small"
         />
-        <TouchableOpacity>
+        <TouchableOpacity onPress={onNavigateFlightDetails}>
           <FlightRequestCardFooterLinkStyled>
             <TyfTypography
               text="Details"

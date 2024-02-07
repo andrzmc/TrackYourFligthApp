@@ -12,7 +12,7 @@ import {TouchableOpacity, View} from 'react-native';
 
 const FlightRequestCoverLayout: FC<FlightRequestCoverProps> = props => {
   const {routeParams, flights} = props;
-  const {onUpdateParams, onNavigateOtherStack} = useNavigate();
+  const {onUpdateParams, onNavigateScreen} = useNavigate();
 
   const updateDateParams = (event: Date) => {
     onUpdateParams({flightDate: event});
@@ -23,7 +23,7 @@ const FlightRequestCoverLayout: FC<FlightRequestCoverProps> = props => {
       routeParams.flightType === 'code'
         ? 'HomeMainScreen'
         : 'HomeDestinationScreen';
-    onNavigateOtherStack('HomeNavigation', route);
+    onNavigateScreen(route);
   };
 
   return routeParams ? (

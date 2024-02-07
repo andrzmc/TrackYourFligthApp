@@ -1,7 +1,7 @@
 import TyfTypography from '@/elements/tyf-typography/tyf-typography';
 import useNavigate from '@/hooks/use-navigate';
 import React, {useEffect} from 'react';
-import {SafeAreaView} from 'react-native';
+import {View} from 'react-native';
 
 const FlightDetailScreen = () => {
   const {getScreenParams} = useNavigate();
@@ -11,9 +11,9 @@ const FlightDetailScreen = () => {
   }, [getScreenParams]);
 
   return (
-    <SafeAreaView>
+    <View>
       <TyfTypography text="FlightDetailScreen" />
-    </SafeAreaView>
+    </View>
   );
 };
 
