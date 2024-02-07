@@ -11,16 +11,15 @@ import {
   FlightDetailsSwipUpHeaderStyled,
   FlightDetailsSwipUpStyled,
 } from '@/styles/components/layouts/flight/flight-details-swip-up';
-import {FlightRequestCardTimeStyled} from '@/styles/components/layouts/flight/flight-request-card';
-import {flightRequestCardImageUtil} from '@/utils/components/layouts/flight/flight-request-card';
 import moment from 'moment';
 import React, {FC} from 'react';
-import {Dimensions, Image, ImageSourcePropType, View} from 'react-native';
+import {Dimensions, View} from 'react-native';
 import {SwipeablePanel} from 'rn-swipeable-panel';
 import {SwipeablePanelProps} from 'rn-swipeable-panel/dist/Panel';
+import FlightTimeTravelLayout from './flight-time-travel';
 
 const FlightDetailsSwipUpLayout: FC<IFlightStatusCollection> = props => {
-  const {segment, status, estimatedDepartureTime, estimatedArrivalTime} = props;
+  const {segment, status, estimatedDepartureTime} = props;
   const {goBack} = useNavigate();
 
   const swipeableConfig: SwipeablePanelProps = {
@@ -61,35 +60,10 @@ const FlightDetailsSwipUpLayout: FC<IFlightStatusCollection> = props => {
           </View>
         </FlightDetailsSwipUpHeaderStyled>
         <FlightDetailsSwipUpContentStyled>
-          <FlightRequestCardTimeStyled
-            style={{borderBottomWidth: 0.3, paddingBottom: 16}}>
-            <View>
-              <TyfTypography
-                text={moment(new Date(estimatedDepartureTime)).format(
-                  'hh:mm A'
-                )}
-                fontWeight="Medium"
-              />
-              <TyfTypography text={segment.departureAirport} variant="Small" />
-            </View>
-            <Image
-              style={{width: 160}}
-              resizeMode="stretch"
-              source={flightRequestCardImageUtil[status] as ImageSourcePropType}
-            />
-            <View>
-              <TyfTypography
-                text={moment(new Date(estimatedArrivalTime)).format('hh:mm A')}
-                fontWeight="Medium"
-                alignment="right"
-              />
-              <TyfTypography
-                text={segment.arrivalAirport}
-                alignment="right"
-                variant="Small"
-              />
-            </View>
-          </FlightRequestCardTimeStyled>
+          <FlightTimeTravelLayout
+            flight={props}
+            styles={{borderBottomWidth: 0.3, paddingBottom: 16}}
+          />
         </FlightDetailsSwipUpContentStyled>
       </FlightDetailsSwipUpStyled>
     </SwipeablePanel>
