@@ -20,7 +20,11 @@ const TyfDatePicker: FC<TyfDatePickerProps> = props => {
   return (
     <>
       {theme === 'Minimalist' ? (
-        <TyfDatePickerMinimalist />
+        <TyfDatePickerMinimalist
+          value={value}
+          disabled={disabled}
+          onPress={toogleDatePicker}
+        />
       ) : (
         <TyfDatePickerInput
           value={value}

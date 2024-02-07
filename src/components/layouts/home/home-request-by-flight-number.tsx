@@ -2,19 +2,20 @@ import TyfButton from '@/elements/tyf-button/tyf-button';
 import TyfDatePicker from '@/elements/tyf-date-picker/tyf-date-picker';
 import TyfSelect from '@/elements/tyf-select/tyf-select';
 import TyfTypography from '@/elements/tyf-typography/tyf-typography';
+import useNavigate from '@/hooks/use-navigate';
 import {OptionsProps} from '@/models/interfaces/global/options';
+import {IRouteParamsFlightCover} from '@/models/interfaces/routes/params';
 import {IFlightMarketingCatalogue} from '@/models/interfaces/services/api/flight-status';
 import {GetFlightsStatusNumberService} from '@/services/api/flight-status';
 import {
   HomeRequestGridStyled,
   HomeRequestStyled,
 } from '@/styles/components/layouts/home/home-request';
-import {useNavigation} from '@react-navigation/native';
 import React, {FC, useEffect, useState} from 'react';
 import {TouchableOpacity} from 'react-native';
 
 const HomeRequesFlightByNumberLayout: FC = () => {
-  const {navigate} = useNavigation();
+  const {onNavigateScreen, onNavigateOtherStack} = useNavigate();
 
   const [isReady, setIsReady] = useState<boolean>();
   const [flightCode, setFlightCode] = useState<string>();
@@ -55,7 +56,22 @@ const HomeRequesFlightByNumberLayout: FC = () => {
   };
 
   const navigatetoSelectedFlight = () => {
-    console.log({flightCode, flightDate});
+    const params = getRouteParams();
+    onNavigateOtherStack('FlightNavigation', 'FlightRequestScreen', params);
+  };
+
+  const getRouteParams = () => {
+    const data = catalogue?.find(
+      item => item.marketingFlightCode === flightCode
+    );
+    const flightCarrier = data?.marketingCarrier;
+
+    return {
+      flightCode,
+      flightDate,
+      flightCarrier,
+      flightType: 'code',
+    } as IRouteParamsFlightCover;
   };
 
   return (
@@ -96,7 +112,7 @@ const HomeRequesFlightByNumberLayout: FC = () => {
           alignment="center"
         />
         <TouchableOpacity
-          onPress={() => navigate('HomeDestinationScreen' as never)}>
+          onPress={() => onNavigateScreen('HomeDestinationScreen')}>
           <TyfTypography
             text="Try searching by destination"
             variant="Small"
