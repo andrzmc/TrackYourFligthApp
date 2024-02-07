@@ -1,7 +1,8 @@
 import {StackScreen} from '@/models/interfaces/navigation/stack-screen';
 import FlightDetailScreen from '@/screens/flight/details';
 import FlightRequestScreen from '@/screens/flight/request';
-import HomeNavigation from '../home/navigation';
+import HomeDestinationScreen from '@/screens/home/destination';
+import HomeMainScreen from '@/screens/home/main';
 
 const FlightStackScreens: StackScreen[] = [
   {
@@ -16,11 +17,19 @@ const FlightStackScreens: StackScreen[] = [
     name: 'FlightDetailScreen',
     options: {
       headerShown: false,
+      presentation: 'containedModal',
     },
   },
   {
-    component: HomeNavigation,
-    name: 'HomeNavigation',
+    component: HomeMainScreen,
+    name: 'HomeMainScreen',
+    options: {
+      headerShown: false,
+    },
+  },
+  {
+    component: HomeDestinationScreen,
+    name: 'HomeDestinationScreen',
     options: {
       headerShown: false,
     },

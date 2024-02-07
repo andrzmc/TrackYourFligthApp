@@ -1,20 +1,8 @@
-import TyfTypography from '@/elements/tyf-typography/tyf-typography';
-import useNavigate from '@/hooks/use-navigate';
-import React, {useEffect} from 'react';
-import {SafeAreaView} from 'react-native';
+import FlightDetailsModule from '@/modules/flight/flight-details';
+import React from 'react';
 
 const FlightDetailScreen = () => {
-  const {getScreenParams} = useNavigate();
-
-  useEffect(() => {
-    console.log(getScreenParams());
-  }, [getScreenParams]);
-
-  return (
-    <SafeAreaView>
-      <TyfTypography text="FlightDetailScreen" />
-    </SafeAreaView>
-  );
+  return <FlightDetailsModule />;
 };
 
 export default FlightDetailScreen;

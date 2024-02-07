@@ -1,5 +1,6 @@
 import TyfButton from '@/elements/tyf-button/tyf-button';
 import TyfTypography from '@/elements/tyf-typography/tyf-typography';
+import useNavigate from '@/hooks/use-navigate';
 import {
   IFlightColorStatus,
   IFlightStatus,
@@ -11,16 +12,19 @@ import {
   FlightRequestCardStatusStyle,
   FlightRequestCardStatusStyled,
   FlightRequestCardStyled,
-  FlightRequestCardTimeStyled,
 } from '@/styles/components/layouts/flight/flight-request-card';
-import {flightRequestCardImageUtil} from '@/utils/components/layouts/flight/flight-request-card';
-import moment from 'moment';
 import {CaretRight} from 'phosphor-react-native';
 import React, {FC} from 'react';
-import {Image, ImageSourcePropType, TouchableOpacity, View} from 'react-native';
+import {TouchableOpacity} from 'react-native';
+import FlightTimeTravelLayout from './flight-time-travel';
 
 const FlightRequestCardLayout: FC<IFlightStatusCollection> = props => {
-  const {segment, status, estimatedDepartureTime, estimatedArrivalTime} = props;
+  const {segment, status} = props;
+  const {onNavigateScreen} = useNavigate();
+
+  const onNavigateFlightDetails = () => {
+    onNavigateScreen('FlightDetailScreen', props);
+  };
 
   return (
     <FlightRequestCardStyled>
@@ -32,32 +36,7 @@ const FlightRequestCardLayout: FC<IFlightStatusCollection> = props => {
           disabled
         />
       </FlightRequestCardStatusStyled>
-      <FlightRequestCardTimeStyled style={{borderBottomWidth: 1}}>
-        <View>
-          <TyfTypography
-            text={moment(new Date(estimatedDepartureTime)).format('hh:mm A')}
-            fontWeight="Medium"
-          />
-          <TyfTypography text={segment.departureAirport} variant="Small" />
-        </View>
-        <Image
-          style={{width: 160}}
-          resizeMode="stretch"
-          source={flightRequestCardImageUtil[status] as ImageSourcePropType}
-        />
-        <View>
-          <TyfTypography
-            text={moment(new Date(estimatedArrivalTime)).format('hh:mm A')}
-            fontWeight="Medium"
-            alignment="right"
-          />
-          <TyfTypography
-            text={segment.arrivalAirport}
-            alignment="right"
-            variant="Small"
-          />
-        </View>
-      </FlightRequestCardTimeStyled>
+      <FlightTimeTravelLayout flight={props} styles={{borderBottomWidth: 1}} />
       <FlightRequestCardFooterStyled>
         <TyfTypography
           text={`${segment.marketingCarrier} ${segment.marketingFlightCode}`}
@@ -65,7 +44,7 @@ const FlightRequestCardLayout: FC<IFlightStatusCollection> = props => {
           alignment="right"
           variant="Small"
         />
-        <TouchableOpacity>
+        <TouchableOpacity onPress={onNavigateFlightDetails}>
           <FlightRequestCardFooterLinkStyled>
             <TyfTypography
               text="Details"
