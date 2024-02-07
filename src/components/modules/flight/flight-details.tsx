@@ -22,7 +22,7 @@ const FlightDetailsModule: FC = () => {
 
   return routeParams ? (
     <>
-      <FlightDetailsCoverLayout />
+      <FlightDetailsCoverLayout {...routeParams.params} />
       <FlightDetailsSwipUpLayout {...routeParams.params} />
     </>
   ) : null;

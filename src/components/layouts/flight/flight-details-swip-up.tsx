@@ -62,7 +62,28 @@ const FlightDetailsSwipUpLayout: FC<IFlightStatusCollection> = props => {
         <FlightDetailsSwipUpContentStyled>
           <FlightTimeTravelLayout
             flight={props}
-            styles={{borderBottomWidth: 0.3, paddingBottom: 16}}
+            styles={{
+              borderBottomWidth: 0.2,
+              paddingBottom: 16,
+              marginBottom: 24,
+            }}
+          />
+          <TyfTypography
+            text="Flight details"
+            fontWeight="Medium"
+            variant="Subheading"
+          />
+          <TyfTypography text="Departure" fontWeight="Medium" />
+          <TyfTypography
+            text="In process"
+            fontWeight="Light"
+            color="Secondary"
+          />
+          <TyfTypography text="Arrival" fontWeight="Medium" />
+          <TyfTypography
+            text="In process"
+            fontWeight="Light"
+            color="Secondary"
           />
         </FlightDetailsSwipUpContentStyled>
       </FlightDetailsSwipUpStyled>
